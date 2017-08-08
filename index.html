@@ -2,13 +2,31 @@
 <html>
 <head>
   <title>
-    Test file
+    SearchSO
   </title>
-  <script type="text/javascript" src="popup.js"></script>
+  <script type="text/javascript" src="test.js"></script>
 </head>
-<body>
-  <ul id="test">
 
+<body>
+
+  <h1>Search StackOverflow</h1>
+
+  <form id="soQuery" onsubmit="sendData(this); return false;" method="post">
+    <div>
+      <label for="query">Search:</label>
+      <input type="text" id="query" name="q">
+      <select name="pagesize">
+        <option value="1">1</option>
+        <option value="2">2</option>
+        <option value="3">3</option>
+        <option value="4">4</option>
+        <option value="5">5</option>
+      </select>
+      <button type="submit">Submit</button>
+    </div>
+  </form>
+
+  <ul id="test">
   </ul>
 </body>
 </html>

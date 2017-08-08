@@ -1,5 +1,7 @@
-function sendData(form) {
-    alert("Hello");
+function sendData() {
+    event.preventDefault();
+
+    var form = document.getElementById('soQuery');
     // Prepare request for stackoverflow
     var xhr = new XMLHttpRequest();
     var urlEncodedData = "";
@@ -49,7 +51,6 @@ function retrievePosts(data) {
         var posts = xhr.response;
         modifyHTML(posts);
     }
-    alert(requestURL);
 }
 
 function modifyHTML(jsonOBJ){
@@ -65,3 +66,7 @@ function modifyHTML(jsonOBJ){
         myList.appendChild(listElem);
     }
 }
+
+window.addEventListener('load', function(evt) {
+    document.getElementById('soQuery').addEventListener('submit', sendData);
+});

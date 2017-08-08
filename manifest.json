@@ -7,5 +7,12 @@
     "browser_action": {
         "default_title": "searchSO",
         "default_popup": "popup.html"
-    }
+    },
+
+    "background": {
+        "scripts": ["popup.js"],
+        "persistent": false
+    },
+
+    "permissions": ["https://api.stackexchange.com/2.2/"]
 }

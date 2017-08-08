@@ -1,20 +1,20 @@
 <!DOCTYPE html>
 <html>
 <head>
+  <script type="text/javascript" src="popup.js"></script>
   <title>
     SearchSO
   </title>
-  <script type="text/javascript" src="popup.js"></script>
 </head>
 
 <body style="min-width: 300px;">
 
   <h1>Search StackOverflow</h1>
 
-  <form id="soQuery" onsubmit="sendData(this); return false;" method="post">
+  <form id="soQuery">
     <div>
-      <label for="query">Search:</label>
-      <input type="text" id="query" name="q">
+      <label for="searchQuery">Search:</label>
+      <input type="text" id="searchQuery" name="q">
       <select name="pagesize">
         <option value="1">1</option>
         <option value="2">2</option>
@@ -22,10 +22,11 @@
         <option value="4">4</option>
         <option value="5" selected="selected">5</option>
       </select>
-      <button type="submit">Submit</button>
+      <input type="submit">
     </div>
   </form>
 
   <h4>Results: </h4>
   <ul id="test"></ul>
 </body>
+</html>

@@ -1,3 +1,4 @@
+
 function sendData() {
     event.preventDefault();
 
@@ -12,6 +13,9 @@ function sendData() {
         //alert(form.elements[i].name);
         urlEncodedDataPairs.push(encodeURIComponent(form.elements[i].name) + '=' + encodeURIComponent(form.elements[i].value));
     }
+
+    // Save search query
+    search = form.elements[0].value;
 
     // Prepare URL for search query 
     var baseURL = 'https://api.stackexchange.com/2.2/search/excerpts?page=1&sort=relevance&site=stackoverflow&';
@@ -40,6 +44,8 @@ function sendData() {
 }
 
 function retrievePosts(data) {
+
+    // URL for requesting questions from Stackexchange
     var requestURL = 'https://api.stackexchange.com/2.2/questions/'.concat(data, 'site=stackoverflow');
 
     var xhr = new XMLHttpRequest();
@@ -54,17 +60,33 @@ function retrievePosts(data) {
 }
 
 function modifyHTML(jsonOBJ){
-    var myList = document.getElementById('test');
+    var resultsDIV = document.getElementById('results');
 
-    while (myList.firstChild) {
-        myList.removeChild(myList.firstChild);
+    while (resultsDIV.firstChild) {
+        resultsDIV.removeChild(resultsDIV.firstChild);
     }
+
+    // Create header indicating results
+    var results = document.createElement('h3');
+    results.textContent = "Results:"
+    resultsDIV.appendChild(results);
+
+    // Initialize unordered list
+    var resultsLIST = document.createElement('ul');
+    resultsDIV.appendChild(resultsLIST);
 
     for (var i = 0; i < jsonOBJ['items'].length; i++) {
         var listElem = document.createElement('li');
-        listElem.textContent = jsonOBJ['items'][i]['title'];
-        myList.appendChild(listElem);
-    }
+
+        var elemTag = document.createElement('a');
+        elemTag.setAttribute('href', jsonOBJ['items'][i]['link']);
+        elemTag.setAttribute('target', "_blank");
+        elemTag.innerHTML = jsonOBJ['items'][i]['title'] + " [" + jsonOBJ['items'][i]['score'] + "]";
+
+        listElem.appendChild(elemTag);
+        resultsLIST.appendChild(listElem);
+    };
+
 }
 
 window.addEventListener('load', function(evt) {

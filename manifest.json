@@ -1,5 +1,5 @@
 {
-    "mainfest_version": 2,
+    "manifest_version": 2,
     "name": "Search Stackoverflow",
     "description": "This extension returns search results from Stackoverflow in browser",
     "version": "1.0",

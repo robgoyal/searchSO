@@ -1,3 +1,4 @@
+var search = "";
 
 function sendData() {
     event.preventDefault();
@@ -85,7 +86,19 @@ function modifyHTML(jsonOBJ){
 
         listElem.appendChild(elemTag);
         resultsLIST.appendChild(listElem);
-    };
+    }
+
+    var searchURL = 'https://stackoverflow.com/search?q='
+    search = search.replace(/%20/g, '+');
+    searchURL = searchURL.concat(search);
+
+    var searchQuery = document.createElement('p');
+    var searchATag = document.createElement('a');
+    searchATag.setAttribute('href', searchURL);
+    searchATag.setAttribute('target', "_blank");
+    searchATag.innerHTML = "Stackoverflow Link";
+    searchQuery.appendChild(searchATag);
+    resultsDIV.appendChild(searchQuery);
 
 }
 

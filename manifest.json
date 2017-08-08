@@ -1,0 +1,11 @@
+{
+    "mainfest_version": 2,
+    "name": "Search Stackoverflow",
+    "description": "This extension returns search results from Stackoverflow in browser",
+    "version": "1.0",
+
+    "browser_action": {
+        "default_title": "searchSO",
+        "default_popup": "popup.html"
+    }
+}

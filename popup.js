@@ -6,10 +6,38 @@ req.send();
 
 req.onload = function() {
     var data = req.response;
-    test(data);
+
+    var articles = ""
+    for (var step = 0; step < 1; step++) {
+        articles = articles.concat(data['items'][step]['question_id'].toString(), ";");
+    }
+    articles = articles.concat(data['items'][1]['question_id'].toString(), "?");
+    console.log(articles);
+
+    var requestURL = 'https://api.stackexchange.com/2.2/questions/'.concat(articles, 'site=stackoverflow');
+    console.log(requestURL);
+
+    var articlereq = new XMLHttpRequest();
+    articlereq.open("GET", requestURL);
+    articlereq.responseType = 'json';
+    articlereq.send();
+
+    articlereq.onload = function() {
+        var newdata = articlereq.response;
+        console.log(newdata);
+        test(newdata);
+    }
 }
 
 function test(jsonOBJ){
-    console.log(jsonOBJ['items'][0]['title']);
-    console.log(jsonOBJ['items'][1]['title']);
+
+
+
+    var myList = document.getElementById('test');
+
+    for (var step = 0; step < 2; step++) {
+        var listElem = document.createElement('li');
+        listElem.textContent = jsonOBJ['items'][step]['title'];
+        myList.appendChild(listElem);
+    }
 }

@@ -1,7 +1,7 @@
 {
     "manifest_version": 2,
     "name": "Search Stackoverflow",
-    "description": "This extension returns search results from Stackoverflow in browser",
+    "description": "This extension returns search results from Stackoverflow within popup",
     "version": "1.0",
 
     "browser_action": {

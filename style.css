@@ -1,0 +1,13 @@
+body {
+    background-color: orange;
+    min-width: 325px;
+}
+
+#searchLabel {
+    font-weight: bold;
+    font-size: 15px;
+}
+
+#results {
+    background-color: white;
+}

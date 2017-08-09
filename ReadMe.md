@@ -8,11 +8,11 @@ Motivation to create this extension was to learn about using basic front-end web
 
 The Chrome extension allows you to perform a generic query for Stackoverflow indicating how many results you'd like and displays them within the extension popup. 
 
-![Chrome Extension Results](https://github.com/robgoyal/searchSO/imgs/extensionResults.png)
+![Chrome Extension Results](https://github.com/robgoyal/searchSO/tree/master/imgs/extensionResults.png)
 
 These results are similar to the results shown on the stackoverflow search page. 
 
-![Stackoverflow Results](https://github.com/robgoyal/searchSO/imgs/stackoverflowResults.png)
+![Stackoverflow Results](https://github.com/robgoyal/searchSO/tree/master/imgs/stackoverflowResults.png)
 
 
 ## Usage

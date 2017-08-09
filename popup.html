@@ -3,19 +3,18 @@
 <head>
   <script type="text/javascript" src="popup.js"></script>
   <link rel="stylesheet" type="text/css" href="style.css">
-  <title>
-    SearchSO
-  </title>
+  <title>SearchSO</title>
 </head>
 
 <body>
 
   <h1>Search StackOverflow</h1>
 
-  <form id="soQuery">
+  <form id="querySO">
+    <!-- Div so the form elements are on the same line -->
     <div>
-      <label for="searchQuery"><span id="searchLabel">Query:</span></label>
-      <input type="textarea" id="searchQuery" name="q" autocomplete="off">
+      <label for="query"><span id="queryLabel">Query:</span></label>
+      <input type="text" id="query" name="q" autocomplete="off">
       <select name="pagesize">
         <option value="1">1</option>
         <option value="2">2</option>

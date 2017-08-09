@@ -3,7 +3,7 @@ body {
     min-width: 325px;
 }
 
-#searchLabel {
+#queryLabel{
     font-weight: bold;
     font-size: 15px;
 }
